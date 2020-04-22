@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>linux命令 | SU</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.功能作用：解压缩zip文件 2.位置：&#x2F;usr&#x2F;bin&#x2F;unzip 3.格式用法：unzip [-Z] [-opts[modifiers]] file[.zip] [list] [-x xlist] [-d exdir] 4.主要参数 -c 将解压缩的结果显示到屏幕上，并对字符做适当的转换 -p 与-c参数类似，会将解压缩的结果显示到屏幕上，但不会执行任何的转换。 -l 显示压缩文件内所包含的">
+  <meta name="description" content="1.功能作用：解压缩zip文件 2.位置：&#x2F;usr&#x2F;bin&#x2F;unzip 3.格式用法：unzip [-Z] [-opts[modifiers]] file[.zip] [list] [-x xlist] [-d exdir] 4.主要参数">
 <meta property="og:type" content="article">
 <meta property="og:title" content="linux命令">
 <meta property="og:url" content="http://yoursite.com/2020/04/22/linux%E5%91%BD%E4%BB%A4/index.html">
 <meta property="og:site_name" content="SU">
-<meta property="og:description" content="1.功能作用：解压缩zip文件 2.位置：&#x2F;usr&#x2F;bin&#x2F;unzip 3.格式用法：unzip [-Z] [-opts[modifiers]] file[.zip] [list] [-x xlist] [-d exdir] 4.主要参数 -c 将解压缩的结果显示到屏幕上，并对字符做适当的转换 -p 与-c参数类似，会将解压缩的结果显示到屏幕上，但不会执行任何的转换。 -l 显示压缩文件内所包含的">
+<meta property="og:description" content="1.功能作用：解压缩zip文件 2.位置：&#x2F;usr&#x2F;bin&#x2F;unzip 3.格式用法：unzip [-Z] [-opts[modifiers]] file[.zip] [list] [-x xlist] [-d exdir] 4.主要参数">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-04-22T05:10:00.815Z">
-<meta property="article:modified_time" content="2020-03-22T07:30:23.730Z">
+<meta property="article:modified_time" content="2020-04-22T11:28:57.289Z">
 <meta property="article:author" content="su">
 <meta name="twitter:card" content="summary">
   
@@ -175,9 +175,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>1.功能作用：解压缩zip文件</p>
-<p>2.位置：/usr/bin/unzip</p>
-<p>3.格式用法：unzip [-Z] [-opts[modifiers]] file[.zip] [list] [-x xlist] [-d exdir]</p>
+<p>2.位置：<code>/usr/bin/unzip</code></p>
+<p>3.格式用法：<code>unzip [-Z] [-opts[modifiers]] file[.zip] [list] [-x xlist] [-d exdir]</code></p>
 <p>4.主要参数</p>
+<a id="more"></a>
 <p>-c 将解压缩的结果显示到屏幕上，并对字符做适当的转换<br> -p 与-c参数类似，会将解压缩的结果显示到屏幕上，但不会执行任何的转换。<br> -l 显示压缩文件内所包含的文件<br> -f 更新现有的文件<br> -t 检查压缩文件是否正确，但不解压<br> -u 与-f参数类似，但是除了更新现有的文件外，也会将压缩文件中的其他文件解压缩到目录中<br> -z 仅显示压缩文件的备注文字<br> -v 执行是时显示详细的信息。或查看压缩文件目录，但不解压<br> -T 将压缩文件内的所有文件的最新变动时间设为解压缩时候的时间<br> -x 指定不要处理.zip压缩文件中的哪些文件<br> -d 指定文件解压缩后所要存储的目录<br> -n 解压缩时不要覆盖原有的文件<br> -q 安静模式，执行时不显示任何信息<br> -o 不必先询问用户，unzip执行后覆盖原有文件<br> -a 对文本文件进行必要的字符转换<br> -j 不处理压缩文件中原有的目录路径<br> -aa 把所有的文件目录当作文本处理<br> -U use escapes for all non-ASCII Unicode<br> -UU 忽略Unicode编码字符<br> -C 压缩文件中的文件名称区分大小写<br> -L 将压缩文件中的全部文件名改为小写<br> -X 解压缩时同时回存文件原来的UID/GID<br> -V 保留VMS的文件版本信息<br> -K 保留文件的setuid/setgid/tacky属性<br> -M 将输出结果送到more程序处理<br> -O 指定字符编码为DOS，Windows和OS/2<br> -I 指定字符编码为UNIX<br> 5.应用实例<br> 1、把文件解压到当前目录下</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">unzip</span> <span class="selector-tag">test</span><span class="selector-class">.zip</span></span><br></pre></td></tr></table></figure>
 <p>2、如果要把文件解压到指定的目录下，需要用到-d参数。</p>
