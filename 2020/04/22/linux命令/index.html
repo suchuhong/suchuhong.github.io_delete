@@ -180,27 +180,19 @@
 <p>4.主要参数</p>
 <p>-c 将解压缩的结果显示到屏幕上，并对字符做适当的转换<br> -p 与-c参数类似，会将解压缩的结果显示到屏幕上，但不会执行任何的转换。<br> -l 显示压缩文件内所包含的文件<br> -f 更新现有的文件<br> -t 检查压缩文件是否正确，但不解压<br> -u 与-f参数类似，但是除了更新现有的文件外，也会将压缩文件中的其他文件解压缩到目录中<br> -z 仅显示压缩文件的备注文字<br> -v 执行是时显示详细的信息。或查看压缩文件目录，但不解压<br> -T 将压缩文件内的所有文件的最新变动时间设为解压缩时候的时间<br> -x 指定不要处理.zip压缩文件中的哪些文件<br> -d 指定文件解压缩后所要存储的目录<br> -n 解压缩时不要覆盖原有的文件<br> -q 安静模式，执行时不显示任何信息<br> -o 不必先询问用户，unzip执行后覆盖原有文件<br> -a 对文本文件进行必要的字符转换<br> -j 不处理压缩文件中原有的目录路径<br> -aa 把所有的文件目录当作文本处理<br> -U use escapes for all non-ASCII Unicode<br> -UU 忽略Unicode编码字符<br> -C 压缩文件中的文件名称区分大小写<br> -L 将压缩文件中的全部文件名改为小写<br> -X 解压缩时同时回存文件原来的UID/GID<br> -V 保留VMS的文件版本信息<br> -K 保留文件的setuid/setgid/tacky属性<br> -M 将输出结果送到more程序处理<br> -O 指定字符编码为DOS，Windows和OS/2<br> -I 指定字符编码为UNIX<br> 5.应用实例<br> 1、把文件解压到当前目录下</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">unzip</span> <span class="selector-tag">test</span><span class="selector-class">.zip</span></span><br></pre></td></tr></table></figure>
-
 <p>2、如果要把文件解压到指定的目录下，需要用到-d参数。</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unzip -d /temp test.<span class="built_in">zip</span></span><br></pre></td></tr></table></figure>
-
 <p>3、解压的时候，有时候不想覆盖已经存在的文件，那么可以加上-n参数</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">unzip -n test.<span class="built_in">zip</span>  </span><br><span class="line">unzip -n -d /temp test.<span class="built_in">zip</span></span><br></pre></td></tr></table></figure>
-
 <p>4、只看一下zip压缩包中包含哪些文件，不进行解压缩</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">unzip</span> <span class="selector-tag">-l</span> <span class="selector-tag">test</span><span class="selector-class">.zip</span></span><br></pre></td></tr></table></figure>
-
 <p>5、查看显示的文件列表还包含压缩比率</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">unzip</span> <span class="selector-tag">-v</span> <span class="selector-tag">test</span><span class="selector-class">.zip</span></span><br></pre></td></tr></table></figure>
-
 <p>6、检查zip文件是否损坏</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">unzip</span> <span class="selector-tag">-t</span> <span class="selector-tag">test</span><span class="selector-class">.zip</span></span><br></pre></td></tr></table></figure>
-
 <p>7、将压缩文件test.zip在指定目录tmp下解压缩，如果已有相同的文件存在，要求unzip命令覆盖原先的文件</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unzip -o test.<span class="built_in">zip</span> -d /tmp/</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">CP命令</span><br><span class="line">格式: CP [选项]  源文件或目录   目的文件或目录</span><br><span class="line">选项说明:-b 同名,备分原来的文件</span><br><span class="line">        -f 强制覆盖同名文件</span><br><span class="line">        -r  按递归方式保留原目录结构复制文件</span><br><span class="line"></span><br><span class="line">cp -Rf &#x2F;home&#x2F;user1&#x2F;* &#x2F;root&#x2F;temp&#x2F;</span><br><span class="line">将 &#x2F;home&#x2F;user1目录下的所有东西拷到&#x2F;root&#x2F;temp&#x2F;下而不拷贝user1目录本身。</span><br><span class="line">即格式为：cp -Rf 原路径&#x2F; 目的路径&#x2F;</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">mv .&#x2F;WorkReport&#x2F;web.xml .&#x2F;WorkReport&#x2F;WEB-INF&#x2F;</span><br><span class="line">注：移动&#x2F;WorkReport&#x2F;web.xml文件到&#x2F;WorkReport&#x2F;WEB-INF&#x2F;</span><br><span class="line"></span><br><span class="line">mv &#x2F;data&#x2F;new &#x2F;data&#x2F;old&#x2F;</span><br><span class="line">注：移动&#x2F;data&#x2F;new 到&#x2F;data&#x2F;old&#x2F;文件夹下</span><br><span class="line">注意点：移动文件夹的话就不要再加 &#x2F; 了</span><br><span class="line"></span><br><span class="line">如果是移动文件夹下的所有文件的话就可以文件夹后面跟上 &#x2F;* </span><br><span class="line"></span><br><span class="line">mv &#x2F;data&#x2F;new&#x2F;* &#x2F;data&#x2F;old&#x2F;</span><br></pre></td></tr></table></figure>
       
 
