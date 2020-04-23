@@ -152,6 +152,141 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-贝叶斯滤波" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/23/%E8%B4%9D%E5%8F%B6%E6%96%AF%E6%BB%A4%E6%B3%A2/">贝叶斯滤波</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/23/%E8%B4%9D%E5%8F%B6%E6%96%AF%E6%BB%A4%E6%B3%A2/" class="archive-article-date">
+  	<time datetime="2020-04-23T02:19:56.393Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <script type="math/tex; mode=display">
+\text { 重要定理：若 }f_{X}(x) \text { ~ } N\left(\mu_{1}, \sigma_{1}^{2}\right), \quad f_{Y |X}(y | x)  \text { ~ } N\left(\mu_{2}, \sigma_{2}^{2}\right)</script><script type="math/tex; mode=display">
+\text { 则 }f(x)=\left(\frac{\sigma_{1}^{2}}{\sigma_{1}^{2}+\sigma_{2}^{2}} \mu_{2}+\frac{\sigma_{2}^{2}}{\sigma_{1}^{2}+\sigma_{2}^{2}} \mu_{1}, \frac{\sigma_{1}^{2} \sigma_{2}^{2}}{\sigma_{1}^{2}+\sigma_{2}^{2}}\right)</script><script type="math/tex; mode=display">
+\text { 若 } \quad \sigma_{1}^{2}\gg\sigma_{2}^{2}  \text { 后验 ~} N\left(\frac{1}{1+\left(\sigma_{2}^{2} / \sigma_{1}^{2}\right)} \mu_{2}+\frac{\sigma_{2}^{2} / \sigma_{1}^{2}}{1+\left(\sigma_{2}^{2} / \sigma_{1}^{2}\right)} \mu_{1}, \frac{\sigma_{2}^{2}}{1+\left(\sigma_{2}^{2} / \sigma_{1}^{2}\right)}\right) \text {  ~ } N\left(\mu_{2}, \sigma_{2}^{2}\right)</script><script type="math/tex; mode=display">
+\text { 若 } \quad \sigma_{1}^{2}\ll\sigma_{2}^{2}  \text { 后验 ~ } N\left(\frac{\sigma_{1}^{2} / \sigma_{2}^{2}}{1+\left(\sigma_{1}^{2} / \sigma_{2}^{2}\right)} \mu_{2}+\frac{1}{1+\left(\sigma_{1}^{2} / \sigma_{2}^{2}\right)} \mu_{1}, \frac{\sigma_{1}^{2}}{1+\left(\sigma_{1}^{2} / \sigma_{2}^{2}\right)}\right) \text {  ~ } N\left(\mu_{1}, \sigma_{1}^{2}\right)</script><script type="math/tex; mode=display">
+\begin{equation}\sigma_{1}^{2} \gg \sigma_{2}^{2} \quad \text { 倾向于观测值 }  \sigma_{2}^{2} \ll \sigma_{1}^{2} \quad \text { 倾向于预测值 }\end{equation}</script><script type="math/tex; mode=display">
+\frac{\sigma_{1}^{2} \sigma_{2}^{2}}{\sigma_{1}^{2}+\sigma_{2}^{2}}=\sigma_{1}^{2} \frac{1}{1+\sigma_{1}^{2} / \sigma_{2}^{2}}=\sigma_{2}^{2} \frac{1}{1+\sigma_{2}^{2} / \sigma_{1}^{2}}</script><h3 id="狄拉克函数"><a href="#狄拉克函数" class="headerlink" title="狄拉克函数"></a>狄拉克函数</h3>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/23/%E8%B4%9D%E5%8F%B6%E6%96%AF%E6%BB%A4%E6%B3%A2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-贝叶斯公式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/23/%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%85%AC%E5%BC%8F/">贝叶斯公式</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/23/%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%85%AC%E5%BC%8F/" class="archive-article-date">
+  	<time datetime="2020-04-23T02:19:56.322Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="贝叶斯公式"><a href="#贝叶斯公式" class="headerlink" title="贝叶斯公式"></a>贝叶斯公式</h2><script type="math/tex; mode=display">
+P(X=x ，Y=y)=P(Y = y | X=x) P(X=x)=P(X=x | Y = y) PY = y)</script><h3 id="1、离散形式"><a href="#1、离散形式" class="headerlink" title="1、离散形式"></a>1、离散形式</h3><script type="math/tex; mode=display">
+P(X=x | Y=y)=\frac{P(Y = y | X=x) P(X=x)}{P(Y=y)}</script><h3 id="2、连续形式"><a href="#2、连续形式" class="headerlink" title="2、连续形式"></a>2、连续形式</h3><script type="math/tex; mode=display">
+P(X<x | Y=y)=\frac{P(Y=y | X<x) P(X<x)}{P(Y=y)}</script><h4 id="2-1-推导过程"><a href="#2-1-推导过程" class="headerlink" title="2.1 推导过程"></a>2.1 推导过程</h4>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/23/%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%85%AC%E5%BC%8F/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-kalman_filter" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
