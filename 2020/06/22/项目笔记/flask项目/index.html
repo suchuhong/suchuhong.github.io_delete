@@ -6,13 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>SU</title>
+  <title>项目笔记/flask项目 | SU</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="SU">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="项目笔记&#x2F;flask项目">
+<meta property="og:url" content="http://yoursite.com/2020/06/22/%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0/flask%E9%A1%B9%E7%9B%AE/index.html">
 <meta property="og:site_name" content="SU">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-06-22T04:19:25.759Z">
+<meta property="article:modified_time" content="2020-06-22T04:22:29.089Z">
 <meta property="article:author" content="su">
 <meta name="twitter:card" content="summary">
   
@@ -150,694 +152,24 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-数据库1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-项目笔记/flask项目" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/22/%E6%95%B0%E6%8D%AE%E5%BA%931/">数据库1</a>
+    <h1 class="article-title" itemprop="name">
+      项目笔记/flask项目
     </h1>
   
 
         
         
-<a href="/2020/06/22/%E6%95%B0%E6%8D%AE%E5%BA%931/" class="archive-article-date">
-  	<time datetime="2020-06-22T04:19:26.533Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-22</time>
-</a>
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
 
-        <!-- 需要添加的位置 -->
-        <!-- 开始添加字数统计-->
-        
-          <div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">655字</span>
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">2分</span>
-      </span>
-    </span>
-</div>
-
-          
-        <!-- 添加完成 -->
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="MYSQL-事务"><a href="#MYSQL-事务" class="headerlink" title="MYSQL 事务"></a>MYSQL 事务</h3><p><a href="https://mp.weixin.qq.com/s/D0JifQj_yxhCoeYS57Qj_g" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/D0JifQj_yxhCoeYS57Qj_g</a></p>
-<ul>
-<li>关系型数据库：MySQL、Oracle、DB2 和 SqlServer</li>
-<li>非关系型数据库（NoSQL）</li>
-</ul>
-<p><img src="assert/NOSQL.jpg" alt="NoSQL"></p>
-<p><img src="assert\关系型vsNoSQL.jpg" alt="NoSQL"></p>
-<hr>
-<p><img src="assert/MySQL的逻辑架构.jpg" alt="NoSQL"></p>
-<p>事务的执行主要包括两个操作，提交和回滚。</p>
-<blockquote>
-<p><strong>提交</strong>：commit，将事务执行结果写入数据库。</p>
-<p><strong>回滚</strong>：rollback，回滚所有已经执行的语句，返回修改之前的数据。</p>
-</blockquote>
-<p>MySQL事务包含四个特性，号称ACID四大天王。</p>
-<blockquote>
-<p><strong>原子性（Atomicity）</strong> ：语句要么全执行，要么全不执行，是事务最核心的特性，事务本身就是以原子性来定义的；实现主要基于undo log日志实现的。</p>
-<p><strong>持久性（Durability</strong> ：保证事务提交后不会因为宕机等原因导致数据丢失；实现主要基于redo log日志。</p>
-<p><strong>隔离性（Isolation）</strong> ：保证事务执行尽可能不受其他事务影响；InnoDB默认的隔离级别是RR，RR的实现主要基于锁机制、数据的隐藏列、undo log和类next-key lock机制。</p>
-<p><strong>一致性（Consistency）</strong> ：事务追求的最终目标，一致性的实现既需要数据库层面的保障，也需要应用层面的保障。</p>
-</blockquote>
-<h3 id="并发读写问题"><a href="#并发读写问题" class="headerlink" title="并发读写问题"></a>并发读写问题</h3><ul>
-<li><strong>脏读</strong></li>
-<li><strong>不可重复读</strong></li>
-<li><strong>幻读</strong></li>
-</ul>
-<p><img src="assert/隔离级别.jpg" alt="NoSQL"></p>
-<h2 id="Mysql事务问答"><a href="#Mysql事务问答" class="headerlink" title="Mysql事务问答"></a>Mysql事务问答</h2><p><a href="https://mp.weixin.qq.com/s/J95K3An9pC1ExxefBrQHxQ" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/J95K3An9pC1ExxefBrQHxQ</a></p>
-<hr>
-<h2 id="为什么-MySQL-使用-B-树，为什么-MongoDB-使用-B-树？"><a href="#为什么-MySQL-使用-B-树，为什么-MongoDB-使用-B-树？" class="headerlink" title="为什么 MySQL 使用 B+ 树，为什么 MongoDB 使用 B 树？"></a>为什么 MySQL 使用 B+ 树，为什么 MongoDB 使用 B 树？</h2><p><a href="https://mp.weixin.qq.com/s/L0BtsXoJ1AB_tSLxMUbrOA" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/L0BtsXoJ1AB_tSLxMUbrOA</a></p>
-<p><a href="https://mp.weixin.qq.com/s/UkiJQXEF8SYV9tgxJ44lCQ" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/UkiJQXEF8SYV9tgxJ44lCQ</a></p>
-<p><a href="https://mp.weixin.qq.com/s/flbTlCrwQr-AiNnUpy0HMA" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/flbTlCrwQr-AiNnUpy0HMA</a></p>
-<p>MySQL 的默认存储引擎 InnoDB，B+ 树所有的数据行都存储在叶节点中，而这些叶节点可以<strong>通过『指针』依次按顺序连接</strong>，可以直接在多个子节点之间进行跳转，节省大量的磁盘 I/O 时间</p>
-<p>能够满足当时设计场景的需要</p>
-<p><strong>MySQL 使用 B+ 树</strong>是因为<strong>数据的遍历</strong>在关系型数据库中非常常见，它经常需要处理各个表之间的关系并通过范围查询一些数据；</p>
-<p>B树的两个明显特点</p>
-<ul>
-<li>树内的每个节点都存储数据</li>
-<li>叶子节点之间无指针相邻</li>
-</ul>
-<p><img src="assert/B+树.jpg" alt="B+树"></p>
-<p><strong>MongoDB</strong> 作为面向文档的数据库，与数据之间的关系相比，它更看重以文档为中心的组织方式，所以选择了<strong>查询单个文档性能较好</strong>的 <strong>B 树</strong>，这个选择对遍历数据的查询也可以保证可以接受的时延</p>
-<p>B树的两个明显特点</p>
-<ul>
-<li>数据只出现在叶子节点</li>
-<li>所有叶子节点增加了一个链指针</li>
-</ul>
-<p><img src="assert\B树.jpg" alt="B树"></p>
-<hr>
-<h2 id="Mysql-的索引"><a href="#Mysql-的索引" class="headerlink" title="Mysql 的索引"></a>Mysql 的索引</h2><p><a href="https://mp.weixin.qq.com/s?__biz=MzIwMDgzMjc3NA==&amp;mid=2247484720&amp;idx=1&amp;sn=7bd7774058e7886eeb3dedb38aa8657a&amp;chksm=96f66759a181ee4f4c177a755c3ac6b6e97fef148bbf4afea8616f4edec33bf6d4f18cda9f69&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">https://mp.weixin.qq.com/s?__biz=MzIwMDgzMjc3NA==&amp;mid=2247484720&amp;idx=1&amp;sn=7bd7774058e7886eeb3dedb38aa8657a&amp;chksm=96f66759a181ee4f4c177a755c3ac6b6e97fef148bbf4afea8616f4edec33bf6d4f18cda9f69&amp;scene=21#wechat_redirect</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/22/%E6%95%B0%E6%8D%AE%E5%BA%931/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-HTTP" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/22/HTTP/">HTTP</a>
-    </h1>
-  
-
-        
-        
-<a href="/2020/06/22/HTTP/" class="archive-article-date">
-  	<time datetime="2020-06-22T04:19:26.173Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-22</time>
-</a>
-
-        <!-- 需要添加的位置 -->
-        <!-- 开始添加字数统计-->
-        
-          <div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">625字</span>
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">2分</span>
-      </span>
-    </span>
-</div>
-
-          
-        <!-- 添加完成 -->
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="图解-HTTP"><a href="#图解-HTTP" class="headerlink" title="图解 HTTP"></a>图解 HTTP</h3><p><a href="https://mp.weixin.qq.com/s?__biz=MzUxODAzNDg4NQ==&amp;mid=2247483971&amp;idx=1&amp;sn=8f2d5dae3d95efc446061b352c8e9961&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">https://mp.weixin.qq.com/s?__biz=MzUxODAzNDg4NQ==&amp;mid=2247483971&amp;idx=1&amp;sn=8f2d5dae3d95efc446061b352c8e9961&amp;scene=21#wechat_redirect</a></p>
-<p><a href="https://mp.weixin.qq.com/s/HFOU2zfpRTGRRiW2NwohaQ" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/HFOU2zfpRTGRRiW2NwohaQ</a></p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/22/HTTP/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-项目笔记/笔记详情2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/22/%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0/%E7%AC%94%E8%AE%B0%E8%AF%A6%E6%83%852/">项目笔记/笔记详情2</a>
-    </h1>
-  
-
-        
-        
-<a href="/2020/06/22/%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0/%E7%AC%94%E8%AE%B0%E8%AF%A6%E6%83%852/" class="archive-article-date">
-  	<time datetime="2020-06-22T04:19:25.958Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-22</time>
-</a>
-
-        <!-- 需要添加的位置 -->
-        <!-- 开始添加字数统计-->
-        
-          <div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">211字</span>
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">1分</span>
-      </span>
-    </span>
-</div>
-
-          
-        <!-- 添加完成 -->
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>print 函数 —&gt; log 函数 —&gt; 把 log 函数输出的内容写入 文件</strong></p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/22/%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0/%E7%AC%94%E8%AE%B0%E8%AF%A6%E6%83%852/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-项目笔记/笔记详情1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/22/%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0/%E7%AC%94%E8%AE%B0%E8%AF%A6%E6%83%851/">项目笔记/笔记详情1</a>
-    </h1>
-  
-
-        
-        
-<a href="/2020/06/22/%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0/%E7%AC%94%E8%AE%B0%E8%AF%A6%E6%83%851/" class="archive-article-date">
-  	<time datetime="2020-06-22T04:19:25.934Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-22</time>
-</a>
-
-        <!-- 需要添加的位置 -->
-        <!-- 开始添加字数统计-->
-        
-          <div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">2k字</span>
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">7分</span>
-      </span>
-    </span>
-</div>
-
-          
-        <!-- 添加完成 -->
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1、HTTP-协议"><a href="#1、HTTP-协议" class="headerlink" title="1、HTTP 协议"></a>1、HTTP 协议</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">网址组成（四部分）</span><br><span class="line">    协议      http, https（https 是加密的 http）</span><br><span class="line">    主机      g.cn  zhihu.com之类的网址</span><br><span class="line">    端口      HTTP 协议默认是 <span class="number">80</span>，因此一般不用填写</span><br><span class="line">    路径      下面的「/」和「/question/<span class="number">31838184</span>」都是路径</span><br><span class="line">http://www.zhihu.com/</span><br><span class="line">http://www.zhihu.com/question/<span class="number">31838184</span></span><br></pre></td></tr></table></figure>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/22/%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0/%E7%AC%94%E8%AE%B0%E8%AF%A6%E6%83%851/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-项目笔记/知识点总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/22/%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0/%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/">项目笔记/知识点总结</a>
-    </h1>
-  
-
-        
-        
-<a href="/2020/06/22/%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0/%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/" class="archive-article-date">
-  	<time datetime="2020-06-22T04:19:25.923Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-22</time>
-</a>
-
-        <!-- 需要添加的位置 -->
-        <!-- 开始添加字数统计-->
-        
-          <div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">1.5k字</span>
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">6分</span>
-      </span>
-    </span>
-</div>
-
-          
-        <!-- 添加完成 -->
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="1、使用-socket-编写-http-客户端和-http-服务器"><a href="#1、使用-socket-编写-http-客户端和-http-服务器" class="headerlink" title="1、使用 socket 编写 http 客户端和 http 服务器"></a>1、使用 socket 编写 http 客户端和 http 服务器</h4>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/22/%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0/%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-项目笔记/linux服务器的设置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/22/%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E8%AE%BE%E7%BD%AE/">项目笔记/linux服务器的设置</a>
-    </h1>
-  
-
-        
-        
-<a href="/2020/06/22/%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E8%AE%BE%E7%BD%AE/" class="archive-article-date">
-  	<time datetime="2020-06-22T04:19:25.887Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-22</time>
-</a>
-
-        <!-- 需要添加的位置 -->
-        <!-- 开始添加字数统计-->
-        
-          <div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">540字</span>
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">2分</span>
-      </span>
-    </span>
-</div>
-
-          
-        <!-- 添加完成 -->
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="linux-主机设置"><a href="#linux-主机设置" class="headerlink" title="linux 主机设置"></a>linux 主机设置</h4>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/22/%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E8%AE%BE%E7%BD%AE/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-项目笔记/linux基本命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/22/%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0/linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/">项目笔记/linux基本命令</a>
-    </h1>
-  
-
-        
-        
-<a href="/2020/06/22/%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0/linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/" class="archive-article-date">
-  	<time datetime="2020-06-22T04:19:25.765Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-22</time>
-</a>
-
-        <!-- 需要添加的位置 -->
-        <!-- 开始添加字数统计-->
-        
-          <div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">1.4k字</span>
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">5分</span>
-      </span>
-    </span>
-</div>
-
-          
-        <!-- 添加完成 -->
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="Linux-基本命令"><a href="#Linux-基本命令" class="headerlink" title="Linux 基本命令"></a>Linux 基本命令</h3>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/22/%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0/linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-项目笔记/flask项目" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/22/%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0/flask%E9%A1%B9%E7%9B%AE/">项目笔记/flask项目</a>
-    </h1>
-  
-
-        
-        
 <a href="/2020/06/22/%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0/flask%E9%A1%B9%E7%9B%AE/" class="archive-article-date">
   	<time datetime="2020-06-22T04:19:25.759Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-22</time>
 </a>
@@ -875,6 +207,27 @@
       
 
       
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
     </div>
     <div class="article-info article-info-index">
       
@@ -882,194 +235,84 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/22/%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0/flask%E9%A1%B9%E7%9B%AE/">展开全文 >></a>
-        </p>
-      
 
       
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
         
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-卡尔曼滤波代码" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/30/%E5%8D%A1%E5%B0%94%E6%9B%BC%E6%BB%A4%E6%B3%A2%E4%BB%A3%E7%A0%81/">卡尔曼滤波代码</a>
-    </h1>
-  
-
-        
-        
-<a href="/2020/04/30/%E5%8D%A1%E5%B0%94%E6%9B%BC%E6%BB%A4%E6%B3%A2%E4%BB%A3%E7%A0%81/" class="archive-article-date">
-  	<time datetime="2020-04-30T02:17:38.081Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-30</time>
-</a>
-
-        <!-- 需要添加的位置 -->
-        <!-- 开始添加字数统计-->
-        
-          <div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">911字</span>
-      </span>
+      </div>
     </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">4分</span>
-      </span>
-    </span>
+  </div>
 </div>
 
-          
-        <!-- 添加完成 -->
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="卡尔曼滤波代码"><a href="#卡尔曼滤波代码" class="headerlink" title="卡尔曼滤波代码"></a>卡尔曼滤波代码</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%%%%kalman filter</span></span><br><span class="line"><span class="comment">%X(K)=F*X(K-1)+Q</span></span><br><span class="line"><span class="comment">%Y(K)=H*X(K)+R</span></span><br><span class="line"></span><br><span class="line"><span class="comment">%%%1、生成一段随机信号，并滤波</span></span><br><span class="line"><span class="comment">%生成一段时间t</span></span><br><span class="line">t = <span class="number">0.1</span>:<span class="number">0.01</span>:<span class="number">1</span>;</span><br><span class="line">L = <span class="built_in">length</span>(t);</span><br><span class="line"><span class="comment">%生成真是信号x，以及观测y</span></span><br><span class="line"><span class="comment">%首先初始化</span></span><br><span class="line">x = <span class="built_in">zeros</span>(<span class="number">1</span>,L);</span><br><span class="line">y = x;</span><br><span class="line">y2 = x;</span><br><span class="line"><span class="comment">%生成信号，设x=t^2</span></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span>:L</span><br><span class="line">    x(<span class="built_in">i</span>)=t(<span class="built_in">i</span>)^<span class="number">2</span>;</span><br><span class="line">    y(<span class="built_in">i</span>)=x(<span class="built_in">i</span>)+normrnd(<span class="number">0</span>,<span class="number">0.1</span>);<span class="comment">%正态分布，参数为期望和标准差</span></span><br><span class="line">    y2(<span class="built_in">i</span>)=x(<span class="built_in">i</span>)+normrnd(<span class="number">0</span>,<span class="number">0.1</span>);</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">%%%%%%%%%%%%%%%%%%%信号生成完毕%%%%%%%%%%%%%%</span></span><br><span class="line"></span><br><span class="line">&lt;!--more--&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">%%%%%%%%%%%滤波算法%%%%%%%%%%%%%%%</span></span><br><span class="line"><span class="comment">%%%预测方程观测方程怎么写%%%%%%%%%</span></span><br><span class="line"><span class="comment">%观测方程好写Y(K)=X(K)+R R-N(0,1)</span></span><br><span class="line"><span class="comment">%预测方程不好写%%%%%%%%%，在这里可以猜猜是线性增长，但大多数问题，信号是杂乱无章的怎么办</span></span><br><span class="line"></span><br><span class="line"><span class="comment">%模型一，最粗糙的建模</span></span><br><span class="line"><span class="comment">%X(K)=X(K-1)+Q</span></span><br><span class="line"><span class="comment">%Y(K)=X(K)+R</span></span><br><span class="line"><span class="comment">%猜Q-N(0,1)</span></span><br><span class="line"></span><br><span class="line">F1 = <span class="number">1</span>;</span><br><span class="line">H1 = <span class="number">1</span>;</span><br><span class="line">Q1 = <span class="number">0.01</span>;<span class="comment">%%%%%%%%改</span></span><br><span class="line">R1 = <span class="number">1</span>;</span><br><span class="line"><span class="comment">%初始化X(K)+</span></span><br><span class="line">Xplus1 = <span class="built_in">zeros</span>(<span class="number">1</span>,L);<span class="comment">%plus +  minus -</span></span><br><span class="line"><span class="comment">%我们经常用到Xplus,Xminus,Pplus,Pminus  p为方差</span></span><br><span class="line"></span><br><span class="line"><span class="comment">%假设一个处置，假设Xplus1(1)-N(0.01,0.01^2)</span></span><br><span class="line">Xplus1(<span class="number">1</span>) = <span class="number">0.01</span>;</span><br><span class="line">Pplus1 = <span class="number">0.01</span>^<span class="number">2</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">%%卡尔曼滤波算法</span></span><br><span class="line"><span class="comment">%X(K)minus=F*X(K-1)plus</span></span><br><span class="line"><span class="comment">%P(K)minus)=F*P(K-1)*Q'</span></span><br><span class="line"><span class="comment">%K=P(K)minus*H'*inv(H*P(K)minus*H'+R)</span></span><br><span class="line"><span class="comment">%X(K)plus=X(K)minus+K*(y(k)-H*X(K)minus)</span></span><br><span class="line"><span class="comment">%P(K)plus=(I-K*H)*P(K)minus</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">2</span>:L <span class="comment">%%%%%matlab 从1开始</span></span><br><span class="line">    <span class="comment">%%%%%%%%预测步%%%%%%%%%%%</span></span><br><span class="line">    Xminus1 = F1*Xplus1(<span class="built_in">i</span><span class="number">-1</span>);</span><br><span class="line">    Pminus1 = F1*Pplus1*F1'+Q1;</span><br><span class="line">    <span class="comment">%%%%%%%%%%更新步%%%%%%%%%%</span></span><br><span class="line">    K1 = (Pminus1*H1')*inv(H1*Pminus1*H1'+R1);</span><br><span class="line">    Xplus1(<span class="built_in">i</span>) = Xminus1 + K1*(y(<span class="built_in">i</span>) - H1*Xminus1);</span><br><span class="line">    Pplus1 = (<span class="number">1</span> - K1*H1)*Pminus1;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">%模型2</span></span><br><span class="line"><span class="comment">%X(K)=X(K-1)+X'(K-1)*dt+X''(K-1)*dt^2*(1/2!)+Q2</span></span><br><span class="line"><span class="comment">%Y(K)=X(K)+R R-N(0,1)</span></span><br><span class="line"><span class="comment">%此时状态变量X=[X(K) X'(K) X''(K)]T(列向量)</span></span><br><span class="line"><span class="comment">%Y(K)=H*X+R H=[1 0 0](列向量)</span></span><br><span class="line"><span class="comment">%预测方程</span></span><br><span class="line"><span class="comment">%X(K)=X(K-1)+X'(K-1)*dt+X''(K-1)*dt^2*(1/2!)+Q2      X(K)2阶泰勒展开</span></span><br><span class="line"><span class="comment">%X'(K)=0*X(K-1)+X'(K-1)*dt+X''(K-1)*dt+Q3            X'(K)1阶泰勒展开</span></span><br><span class="line"><span class="comment">%X''(K)=0*X(K-1)+0*X'(K-1)*dt+X''(K-1)+Q4            X''(K)0阶泰勒展开</span></span><br><span class="line"><span class="comment">%%多项式信号多求几阶导数，总会比较平缓</span></span><br><span class="line"><span class="comment">%X''(K)=X''(K-1)+Q4正是描述平缓的随机过程，这种建模相对精细一些</span></span><br><span class="line"><span class="comment">%F= 1 dt 0.5*dt^2</span></span><br><span class="line"><span class="comment">%   0  1    dt</span></span><br><span class="line"><span class="comment">%   0  0     1</span></span><br><span class="line"><span class="comment">%H=[1 0 0]</span></span><br><span class="line"><span class="comment">%Q=Q2  0 0</span></span><br><span class="line"><span class="comment">%  0  Q3 0</span></span><br><span class="line"><span class="comment">%  0   0 Q4  协方差矩阵</span></span><br><span class="line"></span><br><span class="line">dt = t(<span class="number">2</span>) - t(<span class="number">1</span>);</span><br><span class="line">F2 = [<span class="number">1</span> dt <span class="number">0.5</span>*dt^<span class="number">2</span>;</span><br><span class="line">      <span class="number">0</span>  <span class="number">1</span>  dt;</span><br><span class="line">      <span class="number">0</span>  <span class="number">0</span>  <span class="number">1</span>];</span><br><span class="line">H2 = [<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>];</span><br><span class="line">Q2 = [<span class="number">1</span> <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">      <span class="number">0</span> <span class="number">0.01</span> <span class="number">0</span>;</span><br><span class="line">      <span class="number">0</span> <span class="number">0</span> <span class="number">0.0001</span>];</span><br><span class="line">R2 = <span class="number">3</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">%%%%%设置初值%%%%%%%</span></span><br><span class="line">Xplus2 = <span class="built_in">zeros</span>(<span class="number">3</span>,L);</span><br><span class="line">Xplus2(<span class="number">1</span>,<span class="number">1</span>)=<span class="number">0.1</span>^<span class="number">2</span>;</span><br><span class="line">Xplus2(<span class="number">2</span>,<span class="number">1</span>)=<span class="number">0</span>;</span><br><span class="line">Xplus2(<span class="number">2</span>,<span class="number">1</span>)=<span class="number">0</span>;</span><br><span class="line">Pplus2=[<span class="number">0.01</span> <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">         <span class="number">0</span> <span class="number">0.01</span> <span class="number">0</span>;</span><br><span class="line">         <span class="number">0</span> <span class="number">0</span> <span class="number">0.0001</span>];</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">2</span>:L</span><br><span class="line">    <span class="comment">%%%%%预测步%%%%%%%%%</span></span><br><span class="line">    Xminus2 = F2*Xplus2(:,<span class="built_in">i</span><span class="number">-1</span>);<span class="comment">%%每一列</span></span><br><span class="line">    Pminus2 = F2*Pplus2*F2'+Q2;</span><br><span class="line">    <span class="comment">%%%%%%%%%更新步%%%%%</span></span><br><span class="line">    K2 = (Pminus2*H2')*inv(H2*Pminus2*H2'+R2);</span><br><span class="line">    Xplus2(:,<span class="built_in">i</span>) = Xminus2+K2*(y(<span class="built_in">i</span>)-H2*Xminus2);</span><br><span class="line">    Pplus2=(<span class="built_in">eye</span>(<span class="number">3</span>)-K2*H2)*Pminus2;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">%%%两个传感器，进行滤波</span></span><br><span class="line"><span class="comment">%Y1(K)=X(K)+R</span></span><br><span class="line"><span class="comment">%Y2(K)=X(K)+R</span></span><br><span class="line"><span class="comment">%H=[1 1]T(列向量） X=X(K)</span></span><br><span class="line"><span class="comment">%H=1  0  0  X=[X(K) X'(K) X''(K)]T(列向量)</span></span><br><span class="line"><span class="comment">%  1  0  0</span></span><br><span class="line">F3 = [<span class="number">1</span> dt <span class="number">0.5</span>*dt^<span class="number">2</span>;</span><br><span class="line">      <span class="number">0</span>  <span class="number">1</span>  dt;</span><br><span class="line">      <span class="number">0</span>  <span class="number">0</span>  <span class="number">1</span>];</span><br><span class="line">H3 = [<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>;</span><br><span class="line">    <span class="number">1</span> <span class="number">0</span> <span class="number">0</span>];</span><br><span class="line">Q3 = [<span class="number">1</span> <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">      <span class="number">0</span> <span class="number">0.01</span> <span class="number">0</span>;</span><br><span class="line">      <span class="number">0</span> <span class="number">0</span> <span class="number">0.0001</span>];</span><br><span class="line">R3 = [<span class="number">3</span> <span class="number">0</span>;</span><br><span class="line">    <span class="number">0</span> <span class="number">3</span>];<span class="comment">%%一定是协方差矩阵</span></span><br><span class="line"><span class="comment">%%%%%设置初值%%%%%%%</span></span><br><span class="line">Xplus3 = <span class="built_in">zeros</span>(<span class="number">3</span>,L);</span><br><span class="line">Xplus3(<span class="number">1</span>,<span class="number">1</span>)=<span class="number">0.1</span>^<span class="number">2</span>;</span><br><span class="line">Xplus3(<span class="number">2</span>,<span class="number">1</span>)=<span class="number">0</span>;</span><br><span class="line">Xplus3(<span class="number">2</span>,<span class="number">1</span>)=<span class="number">0</span>;</span><br><span class="line">Pplus3=[<span class="number">0.01</span> <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">         <span class="number">0</span> <span class="number">0.01</span> <span class="number">0</span>;</span><br><span class="line">         <span class="number">0</span> <span class="number">0</span> <span class="number">0.0001</span>];</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">2</span>:L</span><br><span class="line">    <span class="comment">%%%%%预测步%%%%%%%%%</span></span><br><span class="line">    Xminus3 = F3*Xplus3(:,<span class="built_in">i</span><span class="number">-1</span>);<span class="comment">%%每一列</span></span><br><span class="line">    Pminus3 = F3*Pplus3*F3'+Q3;</span><br><span class="line">    <span class="comment">%%%%%%%%%更新步%%%%%</span></span><br><span class="line">    K3 = (Pminus3*H3')*inv(H3*Pminus3*H3'+R3);</span><br><span class="line">    Y = <span class="built_in">zeros</span>(<span class="number">2</span>,<span class="number">1</span>);</span><br><span class="line">    Y(<span class="number">1</span>,<span class="number">1</span>)=y(<span class="built_in">i</span>);</span><br><span class="line">    Y(<span class="number">2</span>,<span class="number">1</span>)=y2(<span class="built_in">i</span>);</span><br><span class="line">    Xplus3(:,<span class="built_in">i</span>) = Xminus3+K3*(Y-H3*Xminus3);</span><br><span class="line">    Pplus3=(<span class="built_in">eye</span>(<span class="number">3</span>)-K3*H3)*Pminus3;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">plot</span>(t,x,<span class="string">'r'</span>,t,y,<span class="string">'g'</span>,t,Xplus3(<span class="number">1</span>,:),<span class="string">'b'</span>,t,Xplus2(<span class="number">1</span>,:),<span class="string">'k'</span>,<span class="string">'LineWidth'</span>,<span class="number">2</span>);</span><br></pre></td></tr></table></figure>
-
-      
-
-      
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/06/22/%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0/flask%E9%A1%B9%E7%9B%AE/" alt="微信分享二维码">
     </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/30/%E5%8D%A1%E5%B0%94%E6%9B%BC%E6%BB%A4%E6%B3%A2%E4%BB%A3%E7%A0%81/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-卡尔曼滤波图片" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/30/%E5%8D%A1%E5%B0%94%E6%9B%BC%E6%BB%A4%E6%B3%A2%E5%9B%BE%E7%89%87/">卡尔曼滤波图片</a>
-    </h1>
-  
-
-        
-        
-<a href="/2020/04/30/%E5%8D%A1%E5%B0%94%E6%9B%BC%E6%BB%A4%E6%B3%A2%E5%9B%BE%E7%89%87/" class="archive-article-date">
-  	<time datetime="2020-04-30T02:17:38.060Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-30</time>
-</a>
-
-        <!-- 需要添加的位置 -->
-        <!-- 开始添加字数统计-->
-        
-          <div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">7字</span>
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">1分</span>
-      </span>
-    </span>
 </div>
 
-          
-        <!-- 添加完成 -->
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="卡尔曼滤波图片"><a href="#卡尔曼滤波图片" class="headerlink" title="卡尔曼滤波图片"></a>卡尔曼滤波图片</h2><p><img src="https://cdn.jsdelivr.net/gh/suchuhong/mypicture/kalman_filter/1.jpg" alt="1"></p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/30/%E5%8D%A1%E5%B0%94%E6%9B%BC%E6%BB%A4%E6%B3%A2%E5%9B%BE%E7%89%87/">展开全文 >></a>
-        </p>
-      
-
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2020/06/22/%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0/linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          项目笔记/linux基本命令
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/04/30/%E5%8D%A1%E5%B0%94%E6%9B%BC%E6%BB%A4%E6%B3%A2%E4%BB%A3%E7%A0%81/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">卡尔曼滤波代码</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -1089,12 +332,14 @@
 
 
 
+  
 
   
+
   
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
-    </nav>
+
+  
+
   
 
 
@@ -1129,8 +374,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
